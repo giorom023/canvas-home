@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Drawing</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="houseCanvas" width="500" height="500"></canvas>
+    <script>
+        const canvas = document.getElementById('houseCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Draw the house
+        ctx.fillStyle = 'gray';
+        ctx.fillRect(150, 200, 200, 200);
+
+        // Draw the roof
+        ctx.beginPath();
+        ctx.moveTo(150, 200);
+        ctx.lineTo(250, 100);
+        ctx.lineTo(350, 200);
+        ctx.closePath();
+        ctx.fillStyle = 'red';
+        ctx.fill();
+
+        // Draw the door
+        ctx.fillStyle = 'darkgray';
+        ctx.fillRect(225, 300, 50, 100);
+
+        // Draw the door knob
+        ctx.beginPath();
+        ctx.arc(240, 350, 5, 0, 2 * Math.PI);
+        ctx.fillStyle = 'black';
+        ctx.fill();
+
+        // Draw the left window
+        ctx.fillStyle = 'white';
+        ctx.fillRect(170, 250, 50, 50);
+        ctx.strokeRect(170, 250, 50, 50);
+
+        // Draw the left window cross
+        ctx.beginPath();
+        ctx.moveTo(170, 275);
+        ctx.lineTo(220, 275);
+        ctx.moveTo(195, 250);
+        ctx.lineTo(195, 300);
+        ctx.stroke();
+
+        // Draw the right window
+        ctx.fillStyle = 'white';
+        ctx.fillRect(280, 250, 50, 50);
+        ctx.strokeRect(280, 250, 50, 50);
+
+        // Draw the right window cross
+        ctx.beginPath();
+        ctx.moveTo(280, 275);
+        ctx.lineTo(330, 275);
+        ctx.moveTo(305, 250);
+        ctx.lineTo(305, 300);
+        ctx.stroke();
+
+        // Draw the chimney
+        ctx.fillStyle = 'brown';
+        ctx.fillRect(320, 130, 20, 50);
+
+        // Draw the yellow knob next to the left window
+        ctx.beginPath();
+        ctx.arc(190, 260, 5, 0, 2 * Math.PI);
+        ctx.fillStyle = 'yellow';
+        ctx.fill();
+    </script>
+</body>
+</html>
